@@ -13,7 +13,7 @@ class Person < Nameable
     @parent_permission = parent_permission
     @rentals = []
   end
-  
+
   private
 
   def of_age?
