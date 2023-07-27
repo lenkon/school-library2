@@ -45,6 +45,7 @@
 
 - **[Create class]**
 - **[Decorator design pattern]**
+- **[Set up associations between classes and objects]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
