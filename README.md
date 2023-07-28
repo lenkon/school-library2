@@ -46,6 +46,7 @@
 - **[Create class]**
 - **[Decorator design pattern]**
 - **[Set up associations between classes and objects]**
+- **[Interactive console menu]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
