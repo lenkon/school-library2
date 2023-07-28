@@ -4,7 +4,6 @@ require_relative 'book'
 require_relative 'rental'
 
 class App
-
   def initialize
     @books = []
     @rentals = []
@@ -21,16 +20,16 @@ class App
     puts '6 - List all rentals for a given person id'
     puts '7 - Exit'
   end
-  
+
   OPTIONS = {
     1 => :list_books,
     2 => :list_people,
     3 => :create_person,
     4 => :create_book,
     5 => :create_rental,
-    6 => :list_rentals,    
+    6 => :list_rentals
   }.freeze
-  
+
   def option(option)
     method_name = OPTIONS[option]
     if method_name
@@ -38,5 +37,17 @@ class App
     else
       puts 'Invalid option, please type correct number!'
     end
-  end  
+  end
+
+  def list_books
+    @books.each_with_index do |book, index|
+      puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
+    end
+  end
+
+  def list_people
+    @people.each_with_index do |person, index|
+      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
+    end
+  end
 end

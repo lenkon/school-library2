@@ -6,13 +6,13 @@ def main
   loop do
     app.run
     option = gets.chomp.to_i
-    if option === 7
+    if option == 7
       puts 'Thank you for using this app!'
       puts
-      break      
+      break
     end
     app.option(option)
-  end  
+  end
 end
 
 main
