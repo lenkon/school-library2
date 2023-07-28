@@ -51,6 +51,61 @@ class App
     end
   end
 
+  def create_student
+    puts
+    print 'Age: '
+    age = gets.chomp.strip.to_i
+
+    while age < 4 || age > 120
+      print 'Enter correct age: '
+      age = gets.chomp.strip.to_i
+    end
+
+    print 'Name: '
+    name = gets.chomp.strip.capitalize
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp.strip.upcase
+
+    case permission
+    when 'Y' || 'y'
+      permission = true
+    when 'N' || 'n'
+      permission = false
+    end
+
+    @people << Student.new(age, nil, name, parent_permission: permission)
+    puts 'Person created successfully'
+    puts
+  end
+
+  def create_teacher
+    puts
+    print 'Age: '
+    age = gets.chomp.strip.to_i
+    while age < 18 || age > 120
+      print 'Enter correct age: '
+      age = gets.chomp.strip.to_i
+    end
+    print 'Name: '
+    name = gets.chomp.strip.capitalize
+    print 'Specialization: '
+    specialization = gets.chomp.strip
+    @people << Teacher.new(age, specialization, name)
+    puts 'Person created successfully'
+  end
+
+  def create_person
+    puts
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    option = gets.chomp.strip.to_i
+    case option
+    when 1
+      create_student
+    when 2
+      create_teacher
+    end
+  end
+  
   def get_person(id)
     @people.each do |person|
       return person if person.id == id
